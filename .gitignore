@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+
+# Environment variables - NEVER commit these
+.env
+.env.local
+.env.production
+
+# Build output
+dist/
+build/
+
+# Uploaded files
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# Database (local only)
+backend/medsense.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Vite cache
+.vite/
