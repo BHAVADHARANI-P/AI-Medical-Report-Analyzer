@@ -21,7 +21,8 @@ function Auth({ setToken, setUser }) {
       const endpoint = isLogin ? '/api/login' : '/api/register';
       const payload = isLogin ? { email, password } : { name, email, password };
       
-      const response = await axios.post(`http://localhost:5000${endpoint}`, payload);
+      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+      const response = await axios.post(`${API_URL}${endpoint}`, payload);
       
       setToken(response.data.token);
       setUser(response.data.user);

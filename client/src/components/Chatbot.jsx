@@ -29,8 +29,9 @@ function Chatbot({ token, isOpen, onClose }) {
     setLoading(true);
 
     try {
+      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
       const response = await axios.post(
-        'http://localhost:5000/api/chat',
+        `${API_URL}/api/chat`,
         { message: userMsg.content, history: messages.slice(1) }, // exclude initial greeting from history if needed, or keep it
         { headers: { Authorization: `Bearer ${token}` } }
       );
